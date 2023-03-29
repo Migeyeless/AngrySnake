@@ -5,7 +5,7 @@ const foodsound = new Audio('music/food.mp3');
 const gameoversound=new Audio('music/gameover.mp3');
 const movesound=new Audio('music/move.mp3');
 const musicsound=new Audio('music/music.mp3');
-let speed =  7;
+let speed =  5;
 let score = 0;
 let lastPaintTime=0;
 let snakearr = [
@@ -41,7 +41,7 @@ function isCollide(snake) {
 function gameEngine() {
     // PART 1 - Updating the snake array and food
     if(isCollide(snakearr)){
-        speed = 7;
+        speed = 5;
         gameoversound.play();
         musicsound.pause();
         inputDir = {x:0,y:0};
@@ -55,7 +55,7 @@ function gameEngine() {
     if(snakearr[0].y === food.y && snakearr[0].x === food.x){
         foodsound.play();
         score +=1;
-        speed = speed+1;
+        speed = speed+0.2;
         if (score>hiscoreval) {
             hiscoreval = score;
             localStorage.setItem("hiscore",JSON.stringify(hiscoreval));
