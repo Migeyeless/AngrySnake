@@ -55,7 +55,7 @@ function gameEngine() {
     if(snakearr[0].y === food.y && snakearr[0].x === food.x){
         foodsound.play();
         score +=1;
-        speed = speed-1;
+        speed = speed+0.5;
         if (score>hiscoreval) {
             hiscoreval = score;
             localStorage.setItem("hiscore",JSON.stringify(hiscoreval));
